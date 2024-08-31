@@ -77,7 +77,7 @@ The `Volunteer_Phone` table stores phone numbers for volunteers.
 ## Medical Equipment Table
 The `equipment` table stores information about medical equipment used in blood banks.
 
-<img src="equipment_table.png">
+<img src="medical_equipment_table.png">
 
 - **Primary Key**: `equipment_id`
 - **Foreign Key**: `blood_bank_id` references `blood_bank(blood_bank_id)`
