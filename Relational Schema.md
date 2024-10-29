@@ -1,7 +1,6 @@
 # Relational Schema for Blood Bank Management System
 
-This document provides the detailed relational schema for the Blood Bank Management System database, including table definitions, primary keys, and foreign keys.
-
+This document provides a comprehensive overview of the database schema for the Blood Bank Management System, detailing each table along with their primary keys and foreign keys. This document is essential for understanding the structure and relationships within the database.
 ## Blood Bank Table
 
 The `blood_bank` table stores information about blood banks.
@@ -32,7 +31,7 @@ CREATE TABLE donor (
     FOREIGN KEY (blood_bank_id) REFERENCES blood_bank(blood_bank_id)
 );
 ```
-Primary Key: donor_id
+Primary Key: donor_id  
 Foreign Key: blood_bank_id references blood_bank(blood_bank_id)
 ## Blood Table
 
@@ -47,7 +46,7 @@ CREATE TABLE blood (
     FOREIGN KEY (donor_id) REFERENCES donor(donor_id)
 );
 ```
-Primary Key: (donor_id, blood_group, quantity_mL)
+Primary Key: (donor_id, blood_group, quantity_mL)  
 Foreign Key: donor_id references donor(donor_id)
 
 
@@ -67,7 +66,7 @@ CREATE TABLE Employee (
     FOREIGN KEY (blood_bank_id) REFERENCES blood_bank(blood_bank_id)
 );
 ```
-Primary Key: Employee_id
+Primary Key: Employee_id  
 Foreign Key: blood_bank_id references blood_bank(blood_bank_id)
 ## Employee_Phone Table
 
@@ -81,7 +80,7 @@ CREATE TABLE Employee_Phone (
     FOREIGN KEY (employee_id) REFERENCES Employee(Employee_id)
 );
 ```
-Primary Key: (Phone_No, employee_id)
+Primary Key: (Phone_No, employee_id)  
 Foreign Key: employee_id references Employee(Employee_id))
 ## Hospital Table
 The `hospital` table stores information about hospitals.
@@ -122,7 +121,7 @@ CREATE TABLE Patient (
     FOREIGN KEY (hospital_id) REFERENCES hospital(hospital_id)
 );
 ```
-Primary Key: patient_id
+Primary Key: patient_id  
 Foreign Key: blood_bank_id references blood_bank(blood_bank_id), hospital_id references hospital(hospital_id)
 
 ## Volunteer Table
@@ -140,7 +139,7 @@ CREATE TABLE Volunteer (
     FOREIGN KEY (blood_bank_id) REFERENCES blood_bank(blood_bank_id)
 );
 ```
-Primary Key: Volunteer_id
+Primary Key: Volunteer_id  
 Foreign Key: blood_bank_id references blood_bank(blood_bank_id)
 
 ## Volunteer_Phone Table
@@ -156,7 +155,7 @@ CREATE TABLE Volunteer_Phone (
     FOREIGN KEY (Volunteer_id) REFERENCES Volunteer(Volunteer_id)
 );
 ```
-Primary Key: (Volunteer_id, Phone_no_1)
+Primary Key: (Volunteer_id, Phone_no_1)  
 Foreign Key: Volunteer_id references Volunteer(Volunteer_id)
 
 ## Medical_Equipment Table
@@ -175,6 +174,5 @@ CREATE TABLE equipment (
     FOREIGN KEY (blood_bank_id) REFERENCES blood_bank(blood_bank_id)
 );
 ```
-Primary Key: equipment_id
+Primary Key: equipment_id  
 Foreign Key: blood_bank_id references blood_bank(blood_bank_id)
-This RelationalSchema.md file provides a comprehensive overview of the database schema for the Blood Bank Management System, detailing each table along with their primary keys and foreign keys. This document is essential for understanding the structure and relationships within the database.
